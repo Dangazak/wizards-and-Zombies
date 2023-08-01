@@ -38,7 +38,7 @@ public class PlayerStats : MonoBehaviour
     public void TakeDamage(int dmg)
     {
         health -= dmg;
-        print(health);
+
         healthBar.value = (float)health / (float)maxHealth;
         if (health <= 0)
         {
