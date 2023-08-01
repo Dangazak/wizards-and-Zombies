@@ -61,7 +61,6 @@ public class ShootClosestInRange : MonoBehaviour
         attackLocked = true;
         GameObject proyectileInstance = Instantiate(proyectile, transform.position, Quaternion.identity);
         pos2D = target.transform.position - transform.position;
-        Debug.Log(target.name);
         proyectileInstance.GetComponent<Rigidbody2D>().velocity = pos2D.normalized * proyectileSpeed;
     }
 }

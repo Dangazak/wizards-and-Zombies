@@ -14,6 +14,7 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] int speed;
     [SerializeField] Slider healthBar;
     [SerializeField] Slider xpBar;
+    [SerializeField] GameObject gameOverPanel;
 
     public int GetStat(string stat)
     {
@@ -42,8 +43,9 @@ public class PlayerStats : MonoBehaviour
         healthBar.value = (float)health / (float)maxHealth;
         if (health <= 0)
         {
-            //gameover
-            print("Game Over");
+            gameOverPanel.SetActive(true);
+            Time.timeScale = 0;
+            Destroy(gameObject);
         }
     }
 }
